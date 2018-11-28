@@ -1,1 +1,7 @@
 
+[27-Nov-2018 12:06:35 America/New_York] PHP Fatal error:  Redefinition of parameter $source in /home/digita47/public_html/northcountryresource.org/sites/all/modules/contrib/feeds_tamper/plugins/default_value.inc on line 36
+[27-Nov-2018 12:06:37 America/New_York] PHP Fatal error:  Redefinition of parameter $source in /home/digita47/public_html/northcountryresource.org/sites/all/modules/contrib/feeds_tamper/plugins/default_value.inc on line 36
+[27-Nov-2018 12:06:55 America/New_York] PHP Fatal error:  Redefinition of parameter $source in /home/digita47/public_html/northcountryresource.org/sites/all/modules/contrib/feeds_tamper/plugins/default_value.inc on line 36
+[27-Nov-2018 12:07:14 America/New_York] PHP Fatal error:  Redefinition of parameter $source in /home/digita47/public_html/northcountryresource.org/sites/all/modules/contrib/feeds_tamper/plugins/default_value.inc on line 36
+[27-Nov-2018 12:07:16 America/New_York] PHP Fatal error:  Redefinition of parameter $source in /home/digita47/public_html/northcountryresource.org/sites/all/modules/contrib/feeds_tamper/plugins/default_value.inc on line 36
+[27-Nov-2018 12:07:17 America/New_York] PHP Fatal error:  Redefinition of parameter $source in /home/digita47/public_html/northcountryresource.org/sites/all/modules/contrib/feeds_tamper/plugins/default_value.inc on line 36
