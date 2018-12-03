@@ -221,9 +221,22 @@ function resource_views_default_views() {
   $handler->display->display_options['style_options']['columns_sm'] = '6';
   $handler->display->display_options['style_options']['columns_md'] = '4';
   $handler->display->display_options['style_options']['columns_lg'] = '3';
-  $handler->display->display_options['style_options']['column_class'] = 'views-row';
+  $handler->display->display_options['style_options']['column_class'] = 'views-row focus-[tid]';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['separator'] = ' | ';
+  /* Relationship: Indexed Node: Focus */
+  $handler->display->display_options['relationships']['field_focus']['id'] = 'field_focus';
+  $handler->display->display_options['relationships']['field_focus']['table'] = 'search_api_index_resources_index';
+  $handler->display->display_options['relationships']['field_focus']['field'] = 'field_focus';
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['relationship'] = 'field_focus';
+  $handler->display->display_options['fields']['tid']['label'] = 'Focus ID';
+  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
+  $handler->display->display_options['fields']['tid']['link_to_entity'] = 0;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_resources_index';
@@ -231,6 +244,7 @@ function resource_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'focus-[tid]';
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
   /* Field: Indexed Node: Primary Services */
   $handler->display->display_options['fields']['field_primary_services']['id'] = 'field_primary_services';
