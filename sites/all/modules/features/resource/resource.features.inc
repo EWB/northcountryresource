@@ -72,9 +72,7 @@ function resource_default_search_api_index() {
       "fields" : {
         "body:value" : { "type" : "text" },
         "field_email" : { "type" : "text" },
-        "field_focus" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_location" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_primary_contact" : { "type" : "text" },
         "field_primary_services" : { "type" : "text" },
         "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },

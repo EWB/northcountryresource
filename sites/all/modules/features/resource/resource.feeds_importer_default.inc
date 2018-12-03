@@ -115,14 +115,14 @@ function resource_feeds_importer_default() {
           11 => array(
             'source' => 'Focus',
             'target' => 'field_focus',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           12 => array(
             'source' => 'Keywords',
             'target' => 'field_keywords',
-            'unique' => FALSE,
-            'language' => 'und',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           13 => array(
             'source' => 'Links',
@@ -153,7 +153,7 @@ function resource_feeds_importer_default() {
         'update_existing' => '2',
         'update_non_existent' => 'skip',
         'input_format' => 'filtered_html',
-        'skip_hash_check' => 1,
+        'skip_hash_check' => 0,
         'bundle' => 'resource',
         'language' => 'und',
       ),
