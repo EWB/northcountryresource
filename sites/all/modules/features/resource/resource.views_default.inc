@@ -291,5 +291,263 @@ function resource_views_default_views() {
   $handler = $view->new_display('block', 'Block', 'block_1');
   $export['resource_search'] = $view;
 
+  $view = new view();
+  $view->name = 'resources';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Resources';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'title' => 'title',
+    'field_focus' => 'field_focus',
+    'field_links' => 'field_links',
+  );
+  $handler->display->display_options['row_options']['separator'] = '   ';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Field: Content: Focus */
+  $handler->display->display_options['fields']['field_focus']['id'] = 'field_focus';
+  $handler->display->display_options['fields']['field_focus']['table'] = 'field_data_field_focus';
+  $handler->display->display_options['fields']['field_focus']['field'] = 'field_focus';
+  $handler->display->display_options['fields']['field_focus']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_focus']['delta_offset'] = '0';
+  /* Field: Content: Links */
+  $handler->display->display_options['fields']['field_links']['id'] = 'field_links';
+  $handler->display->display_options['fields']['field_links']['table'] = 'field_data_field_links';
+  $handler->display->display_options['fields']['field_links']['field'] = 'field_links';
+  $handler->display->display_options['fields']['field_links']['label'] = 'Link';
+  $handler->display->display_options['fields']['field_links']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_links']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_links']['type'] = 'link_url';
+  $handler->display->display_options['fields']['field_links']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_links']['separator'] = ' &bull; ';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'resource' => 'resource',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'resources/map';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'ip_geoloc_leaflet';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => '',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['map'] = 'esri-natgeo_world_map';
+  $handler->display->display_options['style_options']['map_height'] = '400';
+  $handler->display->display_options['style_options']['ip_geoloc_views_plugin_latitude'] = array(
+    'field_geolocation' => 'field_geolocation',
+  );
+  $handler->display->display_options['style_options']['ip_geoloc_views_plugin_longitude'] = '';
+  $handler->display->display_options['style_options']['visitor_marker']['visitor_marker_accuracy_circle'] = 0;
+  $handler->display->display_options['style_options']['center_option'] = '0';
+  $handler->display->display_options['style_options']['sync']['2'] = 0;
+  $handler->display->display_options['style_options']['sync']['4'] = 0;
+  $handler->display->display_options['style_options']['sync']['8'] = 1;
+  $handler->display->display_options['style_options']['sync']['16'] = 1;
+  $handler->display->display_options['style_options']['full_screen'] = 0;
+  $handler->display->display_options['style_options']['scale_metric'] = 0;
+  $handler->display->display_options['style_options']['scale_imperial'] = 0;
+  $handler->display->display_options['style_options']['zoom_indicator'] = 0;
+  $handler->display->display_options['style_options']['map_reset'] = 0;
+  $handler->display->display_options['style_options']['map_cluster_toggle'] = 0;
+  $handler->display->display_options['style_options']['mini_map']['on'] = 0;
+  $handler->display->display_options['style_options']['mini_map']['height'] = '100';
+  $handler->display->display_options['style_options']['mini_map']['width'] = '150';
+  $handler->display->display_options['style_options']['mini_map']['toggle'] = 1;
+  $handler->display->display_options['style_options']['mini_map']['zoom_delta'] = '-5';
+  $handler->display->display_options['style_options']['cluster_radius'] = '80';
+  $handler->display->display_options['style_options']['cluster_differentiator']['cluster_differentiator_fields'] = array(
+    '' => '',
+  );
+  $handler->display->display_options['style_options']['cluster_differentiator']['zoom_ranges'] = array(
+    1 => '',
+  );
+  $handler->display->display_options['style_options']['cluster_differentiator']['cluster_tooltips'] = 1;
+  $handler->display->display_options['style_options']['cluster_differentiator']['cluster_outline'] = '0';
+  $handler->display->display_options['style_options']['cluster_aggregation']['aggregation_function'] = 'average';
+  $handler->display->display_options['style_options']['cluster_aggregation']['ranges']['small'] = '10';
+  $handler->display->display_options['style_options']['cluster_aggregation']['ranges']['medium'] = '100';
+  $handler->display->display_options['style_options']['cluster_aggregation']['ranges']['large'] = '1000';
+  $handler->display->display_options['style_options']['map_options']['maxzoom'] = '12';
+  $handler->display->display_options['style_options']['map_options']['zoom'] = '2';
+  $handler->display->display_options['style_options']['map_options']['scrollwheelzoom'] = '1';
+  $handler->display->display_options['style_options']['map_options']['dragging'] = '1';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: GeoLocation */
+  $handler->display->display_options['fields']['field_geolocation']['id'] = 'field_geolocation';
+  $handler->display->display_options['fields']['field_geolocation']['table'] = 'field_data_field_geolocation';
+  $handler->display->display_options['fields']['field_geolocation']['field'] = 'field_geolocation';
+  $handler->display->display_options['fields']['field_geolocation']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_geolocation']['click_sort_column'] = 'geom';
+  $handler->display->display_options['fields']['field_geolocation']['settings'] = array(
+    'data' => 'full',
+  );
+  /* Field: Content: Images */
+  $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
+  $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['label'] = '';
+  $handler->display->display_options['fields']['field_images']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_images']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_images']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
+
+  /* Display: Attachment */
+  $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'ip_geoloc_leaflet';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => '',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['map'] = 'esri-natgeo_world_map';
+  $handler->display->display_options['style_options']['map_height'] = '400';
+  $handler->display->display_options['style_options']['ip_geoloc_views_plugin_latitude'] = array(
+    'field_geolocation' => 'field_geolocation',
+  );
+  $handler->display->display_options['style_options']['ip_geoloc_views_plugin_longitude'] = '';
+  $handler->display->display_options['style_options']['visitor_marker']['visitor_marker_accuracy_circle'] = 0;
+  $handler->display->display_options['style_options']['center_option'] = '0';
+  $handler->display->display_options['style_options']['sync']['2'] = 0;
+  $handler->display->display_options['style_options']['sync']['4'] = 0;
+  $handler->display->display_options['style_options']['sync']['8'] = 1;
+  $handler->display->display_options['style_options']['sync']['16'] = 1;
+  $handler->display->display_options['style_options']['full_screen'] = 0;
+  $handler->display->display_options['style_options']['scale_metric'] = 0;
+  $handler->display->display_options['style_options']['scale_imperial'] = 0;
+  $handler->display->display_options['style_options']['zoom_indicator'] = 0;
+  $handler->display->display_options['style_options']['map_reset'] = 0;
+  $handler->display->display_options['style_options']['map_cluster_toggle'] = 0;
+  $handler->display->display_options['style_options']['mini_map']['on'] = 0;
+  $handler->display->display_options['style_options']['mini_map']['height'] = '100';
+  $handler->display->display_options['style_options']['mini_map']['width'] = '150';
+  $handler->display->display_options['style_options']['mini_map']['toggle'] = 1;
+  $handler->display->display_options['style_options']['mini_map']['zoom_delta'] = '-5';
+  $handler->display->display_options['style_options']['cluster_radius'] = '80';
+  $handler->display->display_options['style_options']['cluster_differentiator']['cluster_differentiator_fields'] = array(
+    '' => '',
+  );
+  $handler->display->display_options['style_options']['cluster_differentiator']['zoom_ranges'] = array(
+    1 => '',
+  );
+  $handler->display->display_options['style_options']['cluster_differentiator']['cluster_tooltips'] = 1;
+  $handler->display->display_options['style_options']['cluster_differentiator']['cluster_outline'] = '0';
+  $handler->display->display_options['style_options']['cluster_aggregation']['aggregation_function'] = 'average';
+  $handler->display->display_options['style_options']['cluster_aggregation']['ranges']['small'] = '10';
+  $handler->display->display_options['style_options']['cluster_aggregation']['ranges']['medium'] = '100';
+  $handler->display->display_options['style_options']['cluster_aggregation']['ranges']['large'] = '1000';
+  $handler->display->display_options['style_options']['map_options']['maxzoom'] = '12';
+  $handler->display->display_options['style_options']['map_options']['zoom'] = '2';
+  $handler->display->display_options['style_options']['map_options']['scrollwheelzoom'] = '1';
+  $handler->display->display_options['style_options']['map_options']['dragging'] = '1';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: GeoLocation */
+  $handler->display->display_options['fields']['field_geolocation']['id'] = 'field_geolocation';
+  $handler->display->display_options['fields']['field_geolocation']['table'] = 'field_data_field_geolocation';
+  $handler->display->display_options['fields']['field_geolocation']['field'] = 'field_geolocation';
+  $handler->display->display_options['fields']['field_geolocation']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_geolocation']['click_sort_column'] = 'geom';
+  $handler->display->display_options['fields']['field_geolocation']['settings'] = array(
+    'data' => 'full',
+  );
+  /* Field: Content: Images */
+  $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
+  $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['label'] = '';
+  $handler->display->display_options['fields']['field_images']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_images']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_images']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+    'block_1' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
+  $export['resources'] = $view;
+
   return $export;
 }
