@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * faq.views_default.inc

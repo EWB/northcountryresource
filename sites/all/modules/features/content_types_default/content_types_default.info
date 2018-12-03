@@ -1,0 +1,17 @@
+name = Content Types Default
+core = 7.x
+package = North Country Resources
+version = 7.x-1.0
+dependencies[] = features
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_instance][] = node-page-body
+features[node][] = page
+features_exclude[dependencies][taxonomy] = taxonomy
+features_exclude[field_base][field_focus] = field_focus
+features_exclude[field_base][field_front_teaser] = field_front_teaser
+features_exclude[field_instance][node-page-field_focus] = node-page-field_focus
+features_exclude[field_instance][node-page-field_front_teaser] = node-page-field_front_teaser
+features_exclude[taxonomy][major_category] = major_category
+project path = sites/all/modules/features
