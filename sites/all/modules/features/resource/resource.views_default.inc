@@ -207,7 +207,6 @@ function resource_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Resource Search';
-  $handler->display->display_options['css_class'] = 'row';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -216,7 +215,7 @@ function resource_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns_horizontal'] = '4';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '-1';
   $handler->display->display_options['style_options']['columns_vertical'] = '4';
   $handler->display->display_options['style_options']['columns_xs'] = '12';
   $handler->display->display_options['style_options']['columns_sm'] = '6';
@@ -224,10 +223,6 @@ function resource_views_default_views() {
   $handler->display->display_options['style_options']['columns_lg'] = '3';
   $handler->display->display_options['style_options']['column_class'] = 'views-row';
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'field_focus' => 'field_focus',
-    'field_links' => 'field_links',
-  );
   $handler->display->display_options['row_options']['separator'] = ' | ';
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
