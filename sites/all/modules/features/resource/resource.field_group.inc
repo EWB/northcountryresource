@@ -25,6 +25,7 @@ function resource_field_group_info() {
     'weight' => '6',
     'children' => array(
       0 => 'field_telephone_number_text',
+      1 => 'field_location',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
