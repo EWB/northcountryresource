@@ -285,7 +285,7 @@ function resource_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'resource/search';
+  $handler->display->display_options['path'] = 'resources/search';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');

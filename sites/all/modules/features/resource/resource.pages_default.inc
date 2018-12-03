@@ -16,7 +16,7 @@ function resource_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Search Resources';
   $page->admin_description = '';
-  $page->path = 'search-resources';
+  $page->path = 'resources';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array();
