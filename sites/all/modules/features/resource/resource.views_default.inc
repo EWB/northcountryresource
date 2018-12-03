@@ -215,8 +215,14 @@ function resource_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-6 col-lg-4';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
+  $handler->display->display_options['style_options']['columns_horizontal'] = '4';
+  $handler->display->display_options['style_options']['columns_vertical'] = '4';
+  $handler->display->display_options['style_options']['columns_xs'] = '12';
+  $handler->display->display_options['style_options']['columns_sm'] = '6';
+  $handler->display->display_options['style_options']['columns_md'] = '4';
+  $handler->display->display_options['style_options']['columns_lg'] = '3';
+  $handler->display->display_options['style_options']['column_class'] = 'views-row';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
     'field_focus' => 'field_focus',
